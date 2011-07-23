@@ -47,6 +47,10 @@ class API(object):
         return request("places/decide", {"lat": latitude, "lon": longitude},
                        "GET", user=user)
 
+    @classmethod
+    def group_create(c, user):
+        return request("groups/create", {}, user=user)
+
 
 class User(object):
     def __init__(self, email, token):
