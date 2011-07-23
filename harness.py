@@ -30,6 +30,11 @@ class API(object):
         return request("tastes/list", user=user)
 
     @classmethod
+    def taste_query(c, user, latitude, longitude):
+        return request("tastes/query", {"lat": latitude, "lon": longitude},
+                       "POST", user=user)
+
+    @classmethod
     def health_ping(c):
         return request("health/ping", {})
 
