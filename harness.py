@@ -32,7 +32,7 @@ class API(object):
     @classmethod
     def taste_query(c, user, latitude, longitude):
         return request("tastes/query", {"lat": latitude, "lon": longitude},
-                       "POST", user=user)
+                       "GET", user=user)
 
     @classmethod
     def health_ping(c):
