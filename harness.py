@@ -51,6 +51,10 @@ class API(object):
     def group_create(c, user):
         return request("groups/create", {}, user=user)
 
+    @classmethod
+    def group_register(c, user, group_id):
+        return request("groups/register", {"id": group_id}, "POST", user=user)
+
 
 class User(object):
     def __init__(self, email, token):
