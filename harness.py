@@ -42,6 +42,11 @@ class API(object):
     def health_redis(c):
         return request("health/redis", {})
 
+    @classmethod
+    def places_decide(c, user, latitude, longitude):
+        return request("places/decide", {"lat": latitude, "lon": longitude},
+                       "GET", user=user)
+
 
 class User(object):
     def __init__(self, email, token):
